@@ -1,4 +1,2 @@
-secret-octo-robot
+beerify!
 =================
-
-PCS Capstone
