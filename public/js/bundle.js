@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -12657,7 +12657,6 @@ $(function () {
   window.app = new Router();
   Backbone.history.start();
 });
-
 },{"./views/beerify-main-view":13,"./views/drinking-now-view":14,"./views/find-beer-view":15,"backbone":1,"jquery":11}],13:[function(require,module,exports){
 var $ = require('jquery'),
 	Backbone = require('backbone');
@@ -12757,7 +12756,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<h1>find my beer</h1>";
+  return "<h1>find my beer</h1>\n<div id=\"find-beer\" class=container-fluid\">\n    <div class=\"row\" id=\"beerSelectRow\">\n        <div class=\"col-md-12\">\n            <form class=\"form-horizontal\" role=\"form\">\n                <div class=\"form-group col-md-3\">\n                    <label for=\"beer-select\">Select a beer</label>\n                    <select id=\"beer-select\" class=\"form-control\">\n                        <option>Mirror Pond</option>\n                        <option>Jubel Ale</option>\n                        <option>Fresh squeezed</option>\n                        <option>Red Stripe</option>\n                        <option>Heater-Allen Coastal Pils</option>\n                    </select>\n                    <p>\n                    <button type=\"button\" class=\"btn btn-sm btn-primary\">Go!</button>\n                    </p>\n        </div>\n            </form>\n        </div>\n    </div>\n    <div class=\"row-fluid\" id=\"beerListRow\">\n        <div class=\"col-md-12\" id=\"beerListCol\">\n            <h1>Returned list of beers here</h1>\n        </div>\n    </div>\n</div>";
   });
 
 },{"hbsfy/runtime":10}]},{},[12]);
