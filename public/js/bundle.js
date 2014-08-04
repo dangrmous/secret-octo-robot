@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
@@ -12745,7 +12744,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<h1>drinking now</h1>";
+  return "<h1>drinking now</h1>\n<h3>Where are you?</h3>\n<select>\n	<option value=\"first\">--</option>\n	<option value=\"Bridgeport\">Bridgeport</option>\n	<option value=\"Rogue\">Rogue</option>\n	<option value=\"more\">More options</option>\n</select>\n<h3>What are you drinking?</h3>\n<select>\n	<option value=\"first\">--</option>\n	<option value=\"IPA\">IPA</option>\n	<option value=\"Porter\">Porter</option>\n	<option value=\"Seasonal\">Seasonal</option>\n	<option value=\"Lager\">Lager</option>\n	<option value=\"more\">MORE BEER</option>\n</select>\n<div>\n<br>\n<input type=\"submit\" value =\"Submit\">\n</div>";
   });
 
 },{"hbsfy/runtime":10}],18:[function(require,module,exports){
@@ -12761,5 +12760,3 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   });
 
 },{"hbsfy/runtime":10}]},{},[12]);
-=======
->>>>>>> master
