@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/backbone/backbone.js":[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -1608,7 +1608,7 @@
 
 }));
 
-},{"underscore":2}],2:[function(require,module,exports){
+},{"underscore":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/backbone/node_modules/underscore/underscore.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/backbone/node_modules/underscore/underscore.js":[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -2953,7 +2953,7 @@
   }
 }).call(this);
 
-},{}],3:[function(require,module,exports){
+},{}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars.runtime.js":[function(require,module,exports){
 "use strict";
 /*globals Handlebars: true */
 var base = require("./handlebars/base");
@@ -2986,7 +2986,7 @@ var Handlebars = create();
 Handlebars.create = create;
 
 exports["default"] = Handlebars;
-},{"./handlebars/base":4,"./handlebars/exception":5,"./handlebars/runtime":6,"./handlebars/safe-string":7,"./handlebars/utils":8}],4:[function(require,module,exports){
+},{"./handlebars/base":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/base.js","./handlebars/exception":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/exception.js","./handlebars/runtime":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/runtime.js","./handlebars/safe-string":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/safe-string.js","./handlebars/utils":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/utils.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/base.js":[function(require,module,exports){
 "use strict";
 var Utils = require("./utils");
 var Exception = require("./exception")["default"];
@@ -3167,7 +3167,7 @@ exports.log = log;var createFrame = function(object) {
   return obj;
 };
 exports.createFrame = createFrame;
-},{"./exception":5,"./utils":8}],5:[function(require,module,exports){
+},{"./exception":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/exception.js","./utils":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/utils.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/exception.js":[function(require,module,exports){
 "use strict";
 
 var errorProps = ['description', 'fileName', 'lineNumber', 'message', 'name', 'number', 'stack'];
@@ -3196,7 +3196,7 @@ function Exception(message, node) {
 Exception.prototype = new Error();
 
 exports["default"] = Exception;
-},{}],6:[function(require,module,exports){
+},{}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/runtime.js":[function(require,module,exports){
 "use strict";
 var Utils = require("./utils");
 var Exception = require("./exception")["default"];
@@ -3334,7 +3334,7 @@ exports.program = program;function invokePartial(partial, name, context, helpers
 exports.invokePartial = invokePartial;function noop() { return ""; }
 
 exports.noop = noop;
-},{"./base":4,"./exception":5,"./utils":8}],7:[function(require,module,exports){
+},{"./base":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/base.js","./exception":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/exception.js","./utils":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/utils.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/safe-string.js":[function(require,module,exports){
 "use strict";
 // Build out our basic SafeString type
 function SafeString(string) {
@@ -3346,7 +3346,7 @@ SafeString.prototype.toString = function() {
 };
 
 exports["default"] = SafeString;
-},{}],8:[function(require,module,exports){
+},{}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/utils.js":[function(require,module,exports){
 "use strict";
 /*jshint -W004 */
 var SafeString = require("./safe-string")["default"];
@@ -3423,15 +3423,15 @@ exports.escapeExpression = escapeExpression;function isEmpty(value) {
 }
 
 exports.isEmpty = isEmpty;
-},{"./safe-string":7}],9:[function(require,module,exports){
+},{"./safe-string":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars/safe-string.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/runtime.js":[function(require,module,exports){
 // Create a simple path alias to allow browserify to resolve
 // the runtime on a supported path.
 module.exports = require('./dist/cjs/handlebars.runtime');
 
-},{"./dist/cjs/handlebars.runtime":3}],10:[function(require,module,exports){
+},{"./dist/cjs/handlebars.runtime":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/dist/cjs/handlebars.runtime.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/hbsfy/runtime.js":[function(require,module,exports){
 module.exports = require("handlebars/runtime")["default"];
 
-},{"handlebars/runtime":9}],11:[function(require,module,exports){
+},{"handlebars/runtime":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/handlebars/runtime.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.1
  * http://jquery.com/
@@ -12623,7 +12623,7 @@ return jQuery;
 
 }));
 
-},{}],12:[function(require,module,exports){
+},{}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/main.js":[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
 Backbone.$ = $;
@@ -12657,8 +12657,7 @@ $(function () {
   window.app = new Router();
   Backbone.history.start();
 });
-
-},{"./views/beerify-main-view":13,"./views/drinking-now-view":14,"./views/find-beer-view":15,"backbone":1,"jquery":11}],13:[function(require,module,exports){
+},{"./views/beerify-main-view":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/views/beerify-main-view.js","./views/drinking-now-view":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/views/drinking-now-view.js","./views/find-beer-view":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/views/find-beer-view.js","backbone":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/backbone/backbone.js","jquery":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/jquery/dist/jquery.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/views/beerify-main-view.js":[function(require,module,exports){
 var $ = require('jquery'),
 	Backbone = require('backbone');
 
@@ -12680,7 +12679,7 @@ var BeerifyMainView = Backbone.View.extend({
 });
 
 module.exports = BeerifyMainView;
-},{"../../templates/beerify-main.hbs":16,"backbone":1,"jquery":11}],14:[function(require,module,exports){
+},{"../../templates/beerify-main.hbs":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/templates/beerify-main.hbs","backbone":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/backbone/backbone.js","jquery":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/jquery/dist/jquery.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/views/drinking-now-view.js":[function(require,module,exports){
 var $ = require('jquery'),
 	Backbone = require('backbone');
 
@@ -12702,7 +12701,7 @@ var DrinkingNowTemplate = Backbone.View.extend({
 });
 
 module.exports = DrinkingNowTemplate;
-},{"../../templates/drinking-now.hbs":17,"backbone":1,"jquery":11}],15:[function(require,module,exports){
+},{"../../templates/drinking-now.hbs":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/templates/drinking-now.hbs","backbone":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/backbone/backbone.js","jquery":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/jquery/dist/jquery.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/views/find-beer-view.js":[function(require,module,exports){
 var $ = require('jquery'),
 	Backbone = require('backbone');
 	
@@ -12724,7 +12723,7 @@ var FindBeerTemplate = Backbone.View.extend({
 });
 
 module.exports = FindBeerTemplate;
-},{"../../templates/find-beer.hbs":18,"backbone":1,"jquery":11}],16:[function(require,module,exports){
+},{"../../templates/find-beer.hbs":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/templates/find-beer.hbs","backbone":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/backbone/backbone.js","jquery":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/jquery/dist/jquery.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/templates/beerify-main.hbs":[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var Handlebars = require('hbsfy/runtime');
 module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -12736,7 +12735,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return "<h1>beerify!</h1>\n<p class=\"lead\">Add some about/how-to content here, maybe?</p>";
   });
 
-},{"hbsfy/runtime":10}],17:[function(require,module,exports){
+},{"hbsfy/runtime":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/hbsfy/runtime.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/templates/drinking-now.hbs":[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var Handlebars = require('hbsfy/runtime');
 module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -12748,7 +12747,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return "<h1>drinking now</h1>";
   });
 
-},{"hbsfy/runtime":10}],18:[function(require,module,exports){
+},{"hbsfy/runtime":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/hbsfy/runtime.js"}],"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/templates/find-beer.hbs":[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var Handlebars = require('hbsfy/runtime');
 module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -12760,4 +12759,4 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return "<h1>find my beer</h1>";
   });
 
-},{"hbsfy/runtime":10}]},{},[12]);
+},{"hbsfy/runtime":"/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/node_modules/hbsfy/runtime.js"}]},{},["/Users/epeddireddy/Documents/PCS_Capstone/secret-octo-robot/public/js/main.js"]);
