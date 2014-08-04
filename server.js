@@ -5,7 +5,8 @@ var fs = require('fs'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     consolidate = require('consolidate'),
-    Handlebars = require('handlebars');
+    Handlebars = require('handlebars'),
+    config = require('./config');
 
 var db = require('orchestrate')(config.dbKey);
 
