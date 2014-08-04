@@ -51,10 +51,10 @@ app.get('/api/findbeer', function (req, res) {
 app.post('/api/findbeer', function (req, res) {
   req.accepts('application/json');
   console.log(req.body);
-  db.put('beerify-pubs', ('pub' + req.body.name), req.body)
+  db.put('beerify-pubs', ('pub' + req.body.creationDate), req.body)
   .then(function () {
     console.log(req.body);
-    res.send(200, 'ok, we added your pub, here is what you added');
+    res.send(200,'ok, we added your pub, here is what you added on ' + req.body.creationDate + ': ' + req.body.pubName + ': ' + req.body.beerName);
   })
   .fail(function (err) {
     console.error(err);

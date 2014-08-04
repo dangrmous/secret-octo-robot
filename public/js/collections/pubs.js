@@ -3,8 +3,8 @@ var Backbone = require('backbone'),
 
 var Pubs = Backbone.Collection.extend({
     model: Pub,
-    url: '/api/pubs',
-    comparator: 'name'
+    url: '/api/findbeer',
+    comparator: 'pubName'
 });
 
 module.exports = Pubs;
