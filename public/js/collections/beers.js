@@ -1,9 +1,9 @@
 var Backbone = require('backbone');
-var Beer = require('../models/beers.js');
+var Beer = require('../models/beer.js');
 
 var Todos = Backbone.Collection.extend({
     model: Beer,
-    url: '/api/todos',
+    url: '/api/beers',
     comparator: 'creationDate'
 });
 
