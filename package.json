@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "",
   "main": "server.js",
+  "scripts": {
+    "bfy": "browserify --t hbsfy public/js/main.js -o public/js/bundle.js",
+    "wfy": "watchify --t hbsfy public/js/main.js -o public/js/bundle.js"
+  },
   "author": "Butterfly-Assassins",
   "license": "MIT",
   "dependencies": {
