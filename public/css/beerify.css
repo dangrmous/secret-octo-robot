@@ -1,0 +1,41 @@
+body {
+	font-family: 'Bitter', serif;
+	background: url("/css/beer.jpg"), no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#container {
+	padding-bottom: 7%;
+	margin-top: 2%;
+	text-align: center; 
+	border-radius: 10px;
+	background:rgba(255,255,255,0.75);
+	color: black;
+	height: 470px;
+	overflow: scroll;
+	/*box-shadow: 10px 10px 60px 10px white*/
+}
+
+#logo img {
+	width: 100%;
+	padding-top: 3%;	
+}
+
+#nav {
+	float: left;
+	padding: 1%; 
+}
+
+#pub-input, #beer-input, #beer-select {
+	width: 50%;
+	margin: auto;
+	min-width: 200px;
+}
+
+#pub-list {
+	width: 80%;
+	margin: auto;
+}
+
