@@ -6,11 +6,9 @@
                 <div class="form-group col-md-3">
                     <label for="beer-select">Select a beer</label>
                     <select id="beer-select" class="form-control">
-                        <option>Mirror Pond</option>
-                        <option>Jubel Ale</option>
-                        <option>Fresh squeezed</option>
-                        <option>Red Stripe</option>
-                        <option>Heater-Allen Coastal Pils</option>
+                        {{#each beers}}
+                        <option>{{name}}</option>
+                        {{/each}}
                     </select>
                     <p>
                     <button type="button" class="btn btn-sm btn-primary">Go!</button>
