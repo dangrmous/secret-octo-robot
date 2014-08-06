@@ -29,14 +29,12 @@ var FindBeerView = Backbone.View.extend({
                         data.push({name:item.attributes.name});
                     });
                 console.log(data);
-                console.log(this.$el);
+                $('#my-app').html(findBeerTemplate({beers:data}));
             },
             error: function () {
                 console.log("collection fetch error!");
             }
         });
-        $(this.el).html(findBeerTemplate({beers:data}));
-
     }
 });
 
