@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "bfy": "browserify --t hbsfy public/js/main.js -o public/js/bundle.js",
-    "wfy": "watchify --t hbsfy public/js/main.js -o public/js/bundle.js"
+    "wfy": "watchify --t hbsfy public/js/main.js -o public/js/bundle.js -v"
   },
   "author": "Butterfly-Assassins",
   "license": "MIT",

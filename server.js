@@ -64,7 +64,7 @@ app.post('/api/findbeer', function (req, res) {
 
 app.get('/api/beers', function (req, res) {
     var beers = [];
-    db.list('beers')
+    db.list('beerify-beers')
         .then(function (result) {
             result.body.results.forEach(function (item){
                 beers.push(item.value);
