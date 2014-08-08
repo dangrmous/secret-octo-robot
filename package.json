@@ -10,7 +10,6 @@
   "author": "Butterfly-Assassins",
   "license": "MIT",
   "dependencies": {
-      "underscore":"^1.6.0",
     "backbone": "^1.1.2",
     "body-parser": "^1.4.3",
     "consolidate": "^0.10.0",

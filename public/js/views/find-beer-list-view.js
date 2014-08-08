@@ -1,10 +1,7 @@
 var $ = require('jquery'),
-    Backbone = require('backbone'),
-    _ = require('underscore');
+    Backbone = require('backbone');
 
 Backbone.$ = $;
-Backbone._ = _;
-
 
 // Bring in pub list template
 var barsListTemplate = require('../../templates/find-beer-list.hbs');
