@@ -19,7 +19,6 @@ var DrinkingNowTemplate = Backbone.View.extend({
 	initialize: function () {
 		window.pubCollection = this.collection;
 		this.collection.fetch();
-
 		console.log('Yay drinking now view!');
 		$(this.el).html(drinkingNowTemplate);
 	},

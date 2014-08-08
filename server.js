@@ -33,6 +33,7 @@ app.get('/', function (req, res) {
     res.render('./index.html');
 });
 
+
 app.get('/api/findbeer', function (req, res) {
   var pubs = [];
   db.list('beerify-pubs')
@@ -60,6 +61,22 @@ app.post('/api/findbeer', function (req, res) {
     console.error(err);
   });
 });
+
+app.get('/api/beers', function (req, res) {
+    var beers = [];
+    db.list('beerify-beers')
+        .then(function (result) {
+            result.body.results.forEach(function (item){
+                beers.push(item.value);
+            });
+            console.log(beers);
+            res.json(beers);
+        })
+        .fail(function (err) {
+            console.error(err);
+        });
+});
+
 
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
