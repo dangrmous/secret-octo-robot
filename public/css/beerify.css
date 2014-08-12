@@ -1,0 +1,125 @@
+body {
+	font-family: 'Bitter', serif;
+	background: url("/images/beer.jpg"), no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#container {
+	padding-bottom: 7%;
+	margin-top: 2%;
+	text-align: center; 
+	border-radius: 10px;
+	background:rgba(255,255,255,0.75);
+	color: black;
+	height: 470px;
+	overflow: scroll;
+	/*box-shadow: 10px 10px 60px 10px white*/
+}
+
+#logo img {
+	width: 100%;
+	padding-top: 3%;	
+}
+
+#nav {
+	float: left;
+	padding: 1%; 
+}
+
+#pub-input, #beer-input, #beer-select {
+	width: 50%;
+	margin: auto;
+	min-width: 200px;
+}
+
+#pub-list {
+	width: 80%;
+	margin: auto;
+}
+
+#pub-list-row {
+	width: 60%;
+	margin: auto;
+}
+#pub-list-row th{
+	text-align: center; 
+	font-size: 1.3em;
+}
+
+#pub-list th{
+	text-align: center; 
+	font-size: 1.3em;
+}
+
+#menu {
+	text-align: center;
+	margin-top: 1%;
+	display: none;
+}
+#ourPics img{
+	width: 80%;
+	border-radius: 10px;
+}
+
+#ourPics .fa {
+	width:100%;
+}
+
+@media screen and (max-width: 960px){
+	#logo img {
+		width: 80%;
+		margin-left: 10%;
+	}
+
+	#nav {
+		float: center;
+		margin-bottom: -5%;
+	}
+
+	#nav button {
+		width: 40%;
+		height: 50px;
+		font-size: 1.5em;
+	}
+	#pub-input, #beer-input, #beer-select {
+		width: 80%;
+		margin: auto;
+	}
+	#container {
+		width: 90%;
+		height: 100%;
+		margin: auto;
+		padding-bottom: 7%;
+		margin-top: 2%;
+		text-align: center; 
+		border-radius: 10px;
+		background:rgba(255,255,255,0.75);
+		color: black;
+		overflow: visible;
+	}
+	#add-pub {
+		width: 30%;
+		height: 50px;
+		font-size: larger;
+	}
+	.form-group input {
+		font-size: 1.5em;
+	}
+	.form-group h4 {
+		font-size: 1.8em;
+	}
+	#dropdownMenu1 {
+		display: none;
+	}
+	#menu {
+		text-align: center;
+		margin-top: 2%;
+		display: block;
+	}
+	#menu button {
+		width: 30%;
+		font-size: 1.2em;
+	}
+}
