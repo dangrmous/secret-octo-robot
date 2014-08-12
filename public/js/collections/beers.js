@@ -1,10 +1,9 @@
 var Backbone = require('backbone');
-var Beer = require('../models/beers.js');
+var Beer = require('../models/beer.js');
 
-var Todos = Backbone.Collection.extend({
+var Beers = Backbone.Collection.extend({
     model: Beer,
-    url: '/api/todos',
-    comparator: 'creationDate'
+    url: '/api/beers'
 });
 
-module.exports = Todos;
+module.exports = Beers;

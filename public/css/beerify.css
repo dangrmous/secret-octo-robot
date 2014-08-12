@@ -1,6 +1,6 @@
 body {
 	font-family: 'Bitter', serif;
-	background: url("/css/beer.jpg"), no-repeat center center fixed;
+	background: url("/images/beer.jpg"), no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -38,10 +38,33 @@ body {
 	width: 80%;
 	margin: auto;
 }
+
+#pub-list-row {
+	width: 60%;
+	margin: auto;
+}
+#pub-list-row th{
+	text-align: center; 
+	font-size: 1.3em;
+}
+
+#pub-list th{
+	text-align: center; 
+	font-size: 1.3em;
+}
+
 #menu {
 	text-align: center;
 	margin-top: 1%;
 	display: none;
+}
+#ourPics img{
+	width: 80%;
+	border-radius: 10px;
+}
+
+#ourPics .fa {
+	width:100%;
 }
 
 @media screen and (max-width: 960px){
