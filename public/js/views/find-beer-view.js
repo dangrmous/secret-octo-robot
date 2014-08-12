@@ -24,7 +24,7 @@ var FindBeerView = Backbone.View.extend({
                 console.log("collection fetch success!");
                 model.forEach(
                     function(item){
-                        data.push({name:item.attributes.beer.name});
+                        data.push({name:item.attributes.beer.beerName});
                         //console.dir(item.attributes);
                     });
 
