@@ -17,7 +17,7 @@ var FindBeerView = Backbone.View.extend({
     el: '#my-app',
     collection: new Beers(),
     initialize: function () {
-
+        data = [];
         this.listenTo(this.collection,'sync', this.render);
         this.collection.fetch({
             success: function (model, response, options) {
