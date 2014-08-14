@@ -1,24 +1,25 @@
-<h1>find my beer</h1>
-<div id="find-beer" class=container-fluid">
-    <div class="row" id="beerSelectRow">
-        <div class="col-md-12">
-            <form class="form-horizontal" role="form">
-                <div class="form-group col-md-3">
-                    <label for="beer-select">Select a beer</label>
-                    <select id="beer-select" class="form-control">
-                        {{#each beers}}
-                        <option>{{name}}</option>
-                        {{/each}}
-                    </select>
-                    <p>
-                    <button id="get-bars" type="button" class="btn btn-sm btn-primary">Go!</button>
-                    </p>
-        </div>
-            </form>
-        </div>
-    </div>
-    <div class="row-fluid" id="pub-list-row">
-        <div class="col-md-12" id="pubListCol">
-        </div>
+<div id="nav">
+    <a href="#/drinkingnow"><button type="button" class="btn btn-default">Drinking Now</button></a>
+    <a href="#/findbeer"><button type="button" class="btn btn-default">Find Beer</button></a>
+</div>
+
+<div class="row" style="padding-top: 7%;">
+    <h1>find my beer</h1>
+    <br>
+
+    <div class="form-group">
+        <h4>Select a beer</h4>
+        <select id="beer-select" class="form-control">
+            {{#each beers}}
+            <option>{{name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <button id="get-bars" class="btn btn-default" style="background-color:black; color:white;">Go!</button>
+        <br>
     </div>
 </div>
+
+<div class="row-fluid" id="pub-list-row">
+
+
