@@ -33,29 +33,13 @@ app.get('/', function (req, res) {
     res.render('./index.html');
 });
 
-
-app.get('/api/findbeer', function (req, res) {
-  var pubs = [];
-  db.list('beerify-pubs')
-  .then(function (result) {
-    result.body.results.forEach(function (pub) {
-      pubs.push(pub.value);
-    });
-    res.json(pubs);
-    console.log(pubs);
-  })
-  .fail(function (err) {
-    console.error(err);
-  });
-});
-
-app.post('/api/findbeer', function (req, res) {
+app.post('/api/beers', function (req, res) {
   req.accepts('application/json');
   console.log(req.body);
-  db.put('beerify-pubs', ('pub' + req.body.creationDate), req.body)
+  db.put('beerify-beers', ('beer' + req.body.creationDate), req.body)
   .then(function () {
     console.log(req.body);
-    res.send(200,'ok, we added your pub, here is what you added on ' + req.body.creationDate + ': ' + req.body.pubName + ': ' + req.body.beerName);
+    res.send(200,'ok, we added your beer and pub, here is what you added on ' + req.body.creationDate + ': ' + req.body.pubName + ': ' + req.body.beerName);
   })
   .fail(function (err) {
     console.error(err);
@@ -66,8 +50,8 @@ app.get('/api/beers', function (req, res) {
     var beers = [];
     db.list('beerify-beers')
         .then(function (result) {
-            result.body.results.forEach(function (item){
-                beers.push(item.value);
+            result.body.results.forEach(function (beer){
+                beers.push(beer.value);
             });
             console.log(beers);
             res.json(beers);
