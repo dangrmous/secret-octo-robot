@@ -5,30 +5,31 @@ Backbone.$ = $;
 
 // Bring in input view
 var DrinkInputView = require('./drinking-now-input-view');
-var PubListView = require('./drinking-now-list-view');
+var BeerListView = require('./drinking-now-list-view');
 
 // Bring in template for main view
 var drinkingNowTemplate = require('../../templates/drinking-now.hbs');
 
-// Bring in pubs collection
-var Pubs = require('../collections/pubs');
+var Beers = require('../collections/beers');
 
 var DrinkingNowTemplate = Backbone.View.extend({
 	el: '#my-app',
-	collection: new Pubs(),
+	collection: new Beers(),
 	initialize: function () {
-		window.pubCollection = this.collection;
-		this.collection.fetch();
+
 		console.log('Yay drinking now view!');
+
+		window.beerCollection = this.collection;
+		this.collection.fetch();
 		$(this.el).html(drinkingNowTemplate);
 	},
 	render: function () {
-		// do something
+		
 		console.log('Yay drinking now view render');
 
-		var pubListView = new PubListView({collection: this.collection});
-    	pubListView.render();
-    	$('#pub-list').html(pubListView.$el);
+		var beerListView = new BeerListView({collection: this.collection});
+    	beerListView.render();
+    	$('#beer-list').html(beerListView.$el);
 
 		var drinkInputView = new DrinkInputView({collection: this.collection});
 	}

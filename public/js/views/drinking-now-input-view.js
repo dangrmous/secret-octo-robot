@@ -7,22 +7,27 @@ var DrinkingInputView = Backbone.View.extend({
 
   el: '.form-group',
   events: {
-    'click #add-pub': 'addPub'
+    'click #add-beer': 'addBeer'
   },
-  addPub: function () {
-    var $pubInput = $(this.el).find('#pub-input');
+  addBeer: function () {
     var $beerName = $(this.el).find('#beer-input');
+    var $barName = $(this.el).find('#bar-input');
 
-    var pubInput = $pubInput.val();
     var beerName = $beerName.val();
+    var barName = $barName.val();
     var collectionFromInput = {
-      pubName: pubInput,
-      beerName: beerName,
-      creationDate: Date.now()
+      beer: {
+        name: beerName,
+        creationDate: Date.now(),
+        bars: [{
+          barName: barName
+        }]
+      }
     };
-    this.collection.create( collectionFromInput, {validate: true});
+
+    this.collection.create( collectionFromInput, {validate: true} );
     $beerName.val('');
-    $pubInput.val('');
+    $barName.val('');
   }
 });
 

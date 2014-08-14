@@ -1,15 +1,21 @@
 <table class="table table-striped">
   <thead>
   	<tr>
-  		<th>Pub</th>
   		<th>Beer</th>
+  		<th>Bars</th>
   	</tr>
   </thead>
   <tbody>
-  {{#each pubData}}
+  {{#each beerData}}
   	<tr>
-  		<td>{{pubName}}</td>
-  		<td>{{beerName}}</td>
+      <td>{{beerName}}</td>
+      <td>
+      {{#each barName}}
+        <p>
+        {{barName}}
+        <p>
+      {{/each}}
+      </td>
   	</tr>
   {{/each}}
   </tbody>
