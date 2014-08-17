@@ -3,16 +3,24 @@ var $ = require('jQuery'), Backbone = require('backbone');
 Backbone.$ = $;
 
 var ratingDisplayTemplate = require('../../templates/rating-display-view.hbs');
-var data = "Dummy data";
 var RatingDisplayView = Backbone.View.extend(
     {
-        el:$('#ratings-display'),
+        el: '#rating-view-row',
         initialize:function(){
             console.log("Yay ratings-display-view initialize");
+            $(this.el).html("<h2>OAHI/h2>");
         },
 
         render: function(data){
-            this.$el.html(ratingDisplayTemplate({data:data}))}
+            var found = this.collection.filter(function(item){
+                return(data == item.get('beer').name);
+            });
+
+            var rating = found[0].attributes.beer.avgRating;
+            $(this.el).html(ratingDisplayTemplate({rating:rating}));
+            console.log("Yay rating-display-view.js : render with data: " + rating);
+        }
+
     }
 )
 
