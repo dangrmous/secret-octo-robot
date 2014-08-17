@@ -28,7 +28,7 @@ body {
 	padding: 1%; 
 }
 
-#pub-input, #beer-input, #beer-select {
+#bar-input, #beer-input, #beer-rating {
 	width: 50%;
 	margin: auto;
 	min-width: 200px;
@@ -83,8 +83,8 @@ body {
 		height: 50px;
 		font-size: 1.5em;
 	}
-	#pub-input, #beer-input, #beer-select {
-		width: 80%;
+	#pub-input, #bar-input, #beer-rating, #beer-input, #beer-select {
+		width: 20%;
 		margin: auto;
 	}
 	#container {
