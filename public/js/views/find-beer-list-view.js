@@ -18,8 +18,9 @@ var BarsListView = Backbone.View.extend({
             return(beerName == item.get('beer').name);
         });
 
-        console.log("Found is: " + found);
-        var data = found[0].attributes.bars;
+        console.log("Found [0] is: ")
+        console.dir(found[0]);
+        var data = found[0].attributes.beer.bars;
         console.log("data is: " + data);
 
         this.$el.html(barsListTemplate({barData: data}));
