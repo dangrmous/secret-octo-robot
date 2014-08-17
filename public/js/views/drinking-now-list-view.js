@@ -3,10 +3,10 @@ var $ = require('jquery'),
 
 Backbone.$ = $;
 
-// Bring in pub list template
-var pubListTemplate = require('../../templates/drinking-now-list.hbs');
+// Bring in beer list template
+var beerListTemplate = require('../../templates/drinking-now-list.hbs');
 
-var PubListView = Backbone.View.extend({
+var BeerListView = Backbone.View.extend({
   tagName: 'div',
   className: 'table table-striped',
   initialize: function () {
@@ -16,14 +16,25 @@ var PubListView = Backbone.View.extend({
 
     var data = [];
 
-    // Add pub and beer to list
-    this.collection.models.forEach(function (pub) {
-      data.push({pubName: pub.escape('pubName'), beerName: pub.escape('beerName') });
+    // Add beer and bar to list
+    this.collection.models.forEach(function (item) {
+      var bars = item.attributes.beer.bars,
+          barlist = [];
+
+      // Add each bar in the bars array to barlist
+      bars.forEach(function (bar) {
+        barlist.push(bar);
+      })
+
+      data.push({
+        beerName: item.attributes.beer.name,
+        barName: barlist
+      });
     });
 
-    // Update pub table
-    this.$el.html(pubListTemplate({pubData:data}));
+    // Update table
+    this.$el.html(beerListTemplate({ beerData: data }));
   }
 });
 
-module.exports = PubListView;
+module.exports = BeerListView;

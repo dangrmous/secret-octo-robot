@@ -17,9 +17,11 @@ var BarsListView = Backbone.View.extend({
         var found = this.collection.filter(function(item){
             return(beerName == item.get('beer').name);
         });
+
         console.log("Found is: " + found);
         var data = found[0].attributes.bars;
         console.log("data is: " + data);
+
         this.$el.html(barsListTemplate({barData: data}));
     }
 });

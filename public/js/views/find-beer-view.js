@@ -18,12 +18,14 @@ var FindBeerView = Backbone.View.extend({
     el: '#my-app',
     collection: new Beers(),
     initialize: function () {
+        window.beerCollection = this.collection;
         data = [];
-        this.listenTo(this.collection,'sync', this.render);
+        this.listenTo(this.collection, 'sync', this.render);
         this.collection.fetch({
             success: function (model, response, options) {
                 console.log("collection fetch success!");
                 model.forEach(
+
                     function(item){
                         data.push({name:item.attributes.beer.name});
 
@@ -35,21 +37,23 @@ var FindBeerView = Backbone.View.extend({
             }
         });
         console.log('Yay find beer view!');
+
     },
     render: function () {
-        // do something
-        $(this.el).html(findBeerTemplate({beers:data}));
+
+        $(this.el).html(findBeerTemplate({beers: data}));
         console.log('Yay find beer view render');
 
 
     },
-    events: {"click #get-bars" : function(){
+    events: {"click #get-bars": function () {
         console.log("#get-bars clicked!");
         var selectedBeer = $('#beer-select').val();
         var ratingDisplayView = new RatingDisplayView({collection:this.collection});
         ratingDisplayView.render(selectedBeer);
         var barsListView = new BarsListView({collection:this.collection});
         barsListView.render(selectedBeer);
+
         $('#pub-list-row').html(barsListView.$el);
     }
     }

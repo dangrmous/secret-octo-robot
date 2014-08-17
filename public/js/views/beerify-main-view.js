@@ -13,7 +13,6 @@ var BeerifyMainView = Backbone.View.extend({
 		$(this.el).html(beerifyMainTemplate);
 	},
 	render: function () {
-		// do something
 		console.log('Yay main view render');
 	}
 });
