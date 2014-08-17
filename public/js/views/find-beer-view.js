@@ -12,6 +12,7 @@ var findBeerTemplate = require('../../templates/find-beer.hbs');
 //Bring in list view
 
 var BarsListView = require('./find-beer-list-view');
+var RatingDisplayView = require('./rating-display-view')
 
 var FindBeerView = Backbone.View.extend({
     el: '#my-app',
@@ -24,7 +25,7 @@ var FindBeerView = Backbone.View.extend({
                 console.log("collection fetch success!");
                 model.forEach(
                     function(item){
-                        data.push({name:item.attributes.beer.beerName});
+                        data.push({name:item.attributes.beer.name});
 
                     });
 
