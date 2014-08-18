@@ -7,12 +7,17 @@ var DrinkingInputView = Backbone.View.extend({
 
     el: '.form-group',
     events: {
-        'click #add-beer': 'addBeer'
+        'click #add-beer': 'addBeer',
+        'change :radio':
+            function(){
+                $('.choice').text( $('input:checked').val() + ' stars' );
+            }
+
     },
     addBeer: function () {
         var $beerName = $(this.el).find('#beer-input');
         var $barName = $(this.el).find('#bar-input');
-        var $beerRating = $(this.el).find('#beer-rating');
+        var $beerRating = $(this.el).find('input:checked');
 
         var beerName = $beerName.val();
         var barName = $barName.val();
