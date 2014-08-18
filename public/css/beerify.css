@@ -28,7 +28,7 @@ body {
 	padding: 1%; 
 }
 
-#bar-input, #beer-input {
+#bar-input, #beer-input, #beer-select {
 	width: 50%;
 	margin: auto;
 	min-width: 200px;
@@ -180,6 +180,10 @@ body {
 }
 .star-rating i ~ i ~ i ~ i ~ i {
     width: 100%;
+}
+
+#stars-area > img{
+    height: 40px;
 }
 .choice {
 }
