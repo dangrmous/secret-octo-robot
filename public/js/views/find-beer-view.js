@@ -13,6 +13,7 @@ var findBeerTemplate = require('../../templates/find-beer.hbs');
 
 var BarsListView = require('./find-beer-list-view');
 
+
 var FindBeerView = Backbone.View.extend({
     el: '#my-app',
     collection: new Beers(),
@@ -24,8 +25,10 @@ var FindBeerView = Backbone.View.extend({
             success: function (model, response, options) {
                 console.log("collection fetch success!");
                 model.forEach(
-                    function (item) {
-                        data.push({name: item.attributes.beer.name});
+
+                    function(item){
+                        data.push({name:item.attributes.beer.name});
+
                     });
 
             },
@@ -45,8 +48,12 @@ var FindBeerView = Backbone.View.extend({
     },
     events: {"click #get-bars": function () {
         console.log("#get-bars clicked!");
-        var barsListView = new BarsListView({collection: this.collection});
-        barsListView.render($('#beer-select').val());
+        var selectedBeer = $('#beer-select').val();
+
+        var barsListView = new BarsListView({collection:this.collection});
+        barsListView.render(selectedBeer);
+
+
         $('#pub-list-row').html(barsListView.$el);
     }
     }
