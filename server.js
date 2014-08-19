@@ -61,6 +61,21 @@ app.get('/api/beers', function (req, res) {
         });
 });
 
+app.put('/api/beers/:id', function(req, res){
+    //req.accepts('application/json');
+    console.dir(req.body);
+    var beerID = req.params;
+    console.log("Beer ID is: " + beerID);
+    console.log("Request body is: " + req.body);
+    db.put('beerify-beers', beerID, req.body)
+        .then(function (result) {
+            console.log("PUT succeeded");
+        })
+        .fail(function (err) {
+            console.error(err);
+        })
+})
+
 
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
