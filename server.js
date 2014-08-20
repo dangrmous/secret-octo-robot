@@ -10,6 +10,9 @@ var fs = require('fs'),
 
 var db = require('orchestrate')(config.dbKey);
 
+var beersCollection = "beerify-beers";
+//var beersCollection = "beerify-beers-test";
+
 var app = express();
 
 app.use(logger('dev'));
@@ -35,8 +38,8 @@ app.get('/', function (req, res) {
 
 app.post('/api/beers', function (req, res) {
   req.accepts('application/json');
-  console.log(req.body);
-  db.put('beerify-beers', ('beer' + req.body.creationDate), req.body)
+    console.log("req.body.creationDate is: " + req.body.beer.creationDate);
+  db.put(beersCollection, ('beer' + req.body.beer.creationDate), req.body)
   .then(function () {
     console.log(req.body);
     res.send(200,'ok, we added your beer and pub, here is what you added on ' + req.body.creationDate + ': ' + req.body.pubName + ': ' + req.body.beerName);
@@ -48,7 +51,7 @@ app.post('/api/beers', function (req, res) {
 
 app.get('/api/beers', function (req, res) {
     var beers = [];
-    db.list('beerify-beers')
+    db.list(beersCollection)
         .then(function (result) {
             result.body.results.forEach(function (beer){
                 beers.push(beer.value);
@@ -62,14 +65,14 @@ app.get('/api/beers', function (req, res) {
 });
 
 app.put('/api/beers/:id', function(req, res){
-    //req.accepts('application/json');
+    req.accepts('application/json');
     console.dir(req.body);
-    var beerID = req.params;
+    var beerID = req.params.id;
     console.log("Beer ID is: " + beerID);
     console.log("Request body is: " + req.body);
-    db.put('beerify-beers', beerID, req.body)
+    db.put(beersCollection, beerID, req.body)
         .then(function (result) {
-            console.log("PUT succeeded");
+            res.send(200,'ok, we updated your beer and pub, here is what you added on ' + req.body.creationDate + ': ' + req.body.pubName + ': ' + req.body.beerName);
         })
         .fail(function (err) {
             console.error(err);
