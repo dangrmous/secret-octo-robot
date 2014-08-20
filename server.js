@@ -38,11 +38,14 @@ app.get('/', function (req, res) {
 
 app.post('/api/beers', function (req, res) {
   req.accepts('application/json');
-    console.log("req.body.creationDate is: " + req.body.beer.creationDate);
+    var bars = "";
+    req.body.beer.bars.forEach(function(item){
+        bars += (item.barName + " ");
+    });
   db.put(beersCollection, ('beer' + req.body.beer.creationDate), req.body)
   .then(function () {
     console.log(req.body);
-    res.send(200,'ok, we added your beer and pub, here is what you added on ' + req.body.creationDate + ': ' + req.body.pubName + ': ' + req.body.beerName);
+    res.send(200,'ok, we added your beer and pub, here is what you added on ' + req.body.beer.creationDate + ': ' + bars + ': ' + req.body.beer.name);
   })
   .fail(function (err) {
     console.error(err);
@@ -68,11 +71,13 @@ app.put('/api/beers/:id', function(req, res){
     req.accepts('application/json');
     console.dir(req.body);
     var beerID = req.params.id;
-    console.log("Beer ID is: " + beerID);
-    console.log("Request body is: " + req.body);
+    var bars = "";
+    req.body.beer.bars.forEach(function(item){
+        bars += (item.barName + " ");
+    });
     db.put(beersCollection, beerID, req.body)
         .then(function (result) {
-            res.send(200,'ok, we updated your beer and pub, here is what you added on ' + req.body.creationDate + ': ' + req.body.pubName + ': ' + req.body.beerName);
+            res.send(200,'ok, we updated your beer and pub, here is what you added on ' + req.body.beer.creationDate + ': ' + bars + ': ' + req.body.beer.name);
         })
         .fail(function (err) {
             console.error(err);
