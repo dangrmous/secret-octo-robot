@@ -10,8 +10,8 @@ var fs = require('fs'),
 
 var db = require('orchestrate')(config.dbKey);
 
-var beersCollection = "beerify-beers";
-//var beersCollection = "beerify-beers-test";
+var beersCollection = 'beerify-beers';
+//var beersCollection = 'beerify-beers-test';
 
 var app = express();
 
@@ -23,9 +23,9 @@ app.engine('html', consolidate.handlebars);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/server-templates');
 
-var partials = "./server-templates/partials/";
+var partials = './server-templates/partials/';
 fs.readdirSync(partials).forEach(function (file) {
-    var source = fs.readFileSync(partials + file, "utf8"),
+    var source = fs.readFileSync(partials + file, 'utf8'),
         partial = /(.+)\.html/.exec(file).pop();
     Handlebars.registerPartial(partial, source);
 });
@@ -38,9 +38,9 @@ app.get('/', function (req, res) {
 
 app.post('/api/beers', function (req, res) {
   req.accepts('application/json');
-    var bars = "";
+    var bars = '';
     req.body.beer.bars.forEach(function(item){
-        bars += (item.barName + " ");
+        bars += (item.barName + ' ');
     });
   db.put(beersCollection, ('beer' + req.body.beer.creationDate), req.body)
   .then(function () {
@@ -71,9 +71,9 @@ app.put('/api/beers/:id', function(req, res){
     req.accepts('application/json');
     console.dir(req.body);
     var beerID = req.params.id;
-    var bars = "";
+    var bars = '';
     req.body.beer.bars.forEach(function(item){
-        bars += (item.barName + " ");
+        bars += (item.barName + ' ');
     });
     db.put(beersCollection, beerID, req.body)
         .then(function (result) {
