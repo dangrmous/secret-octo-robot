@@ -215,5 +215,13 @@ img {
     .star-rating{
         width: 250px;
     }
+
+    .name h3 {
+    	font-size: 3em;
+    }
+
+    .socialicons {
+    	padding-bottom: 10%;
+    }
 }
 
