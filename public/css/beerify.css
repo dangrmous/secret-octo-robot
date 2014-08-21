@@ -6,6 +6,10 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+img {
+	z-index: 0;
+}
 #container {
 	padding-bottom: 7%;
 	margin-top: 2%;
@@ -24,8 +28,10 @@ body {
 }
 
 #nav {
+	position: fixed;
 	float: left;
 	padding: 1%; 
+	z-index: 1;
 }
 
 #bar-input, #beer-input, #beer-select {
@@ -72,14 +78,19 @@ body {
 	margin-top: 1%;
 	display: none;
 }
-#ourPics img{
+.ourPics img{
 	width: 80%;
 	border-radius: 10px;
 }
 
-#ourPics .fa {
-	width:100%;
+.socialicons img {
+	width: 18%;
 }
+
+.socialicons a:hover {
+	opacity: .5;
+}
+
 #star-container{
     width:250px;
     height: 50px;
@@ -151,15 +162,17 @@ body {
 	}
 
 	#nav {
-		float: center;
-		margin-bottom: -5%;
+		position: relative;
+		width: 100%;
+		padding-bottom: 3%;
 	}
 
 	#nav button {
 		width: 40%;
 		height: 50px;
-		font-size: 1.5em;
+		font-size: 1.3em;
 	}
+
 	#pub-input, #bar-input, #beer-input, #beer-select {
 		width: 20%;
 		margin: auto;
@@ -203,3 +216,4 @@ body {
         width: 250px;
     }
 }
+
