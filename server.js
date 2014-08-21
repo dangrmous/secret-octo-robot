@@ -10,8 +10,8 @@ var fs = require('fs'),
 
 var db = require('orchestrate')(config.dbKey);
 
-//var beersCollection = 'beerify-beers';
-var beersCollection = 'beerify-beers-test';
+var beersCollection = 'beerify-beers';
+//var beersCollection = 'beerify-beers-test';
 
 var app = express();
 
