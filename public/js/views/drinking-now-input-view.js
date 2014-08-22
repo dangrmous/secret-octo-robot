@@ -33,7 +33,7 @@ var DrinkingInputView = Backbone.View.extend({
                     }
                 ],
                 avgRating: beerRating,
-                numEntries: (beerRating || 0)
+                numEntries: (beerRating ? 1 : 0)
 
             }
         };
