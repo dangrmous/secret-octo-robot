@@ -44,7 +44,7 @@ var DrinkingInputView = Backbone.View.extend({
         $beerRating.each(function(){
             $(this).removeAttr('checked');
         });
-        $('h4.choice').text("Rate this beer");
+        $('h4.choice').text('Rate this beer');
     }
 });
 
