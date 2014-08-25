@@ -1,13 +1,13 @@
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>Bar</th>
+        <th>Bar</th><th>Updated</th>
     </tr>
     </thead>
     <tbody>
     {{#each barData}}
         <tr>
-            <td>{{barName}}</td>
+            <td>{{barName}}</td><td>{{timeSinceString}}.</td>
         </tr>
     {{/each}}
     </tbody>

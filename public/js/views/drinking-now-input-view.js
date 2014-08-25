@@ -28,11 +28,12 @@ var DrinkingInputView = Backbone.View.extend({
                 creationDate: Date.now(),
                 bars: [
                     {
-                        barName: barName
+                        barName: barName,
+                        updated: Date.now()
                     }
                 ],
                 avgRating: beerRating,
-                numEntries: (beerRating || 0)
+                numEntries: (beerRating ? 1 : 0)
 
             }
         };
@@ -40,6 +41,10 @@ var DrinkingInputView = Backbone.View.extend({
         this.collection.create(collectionFromInput, {validate: true});
         $beerName.val('');
         $barName.val('');
+        $beerRating.each(function(){
+            $(this).removeAttr('checked');
+        });
+        $('h4.choice').text('Rate this beer');
     }
 });
 
