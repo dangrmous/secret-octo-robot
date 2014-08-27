@@ -23,6 +23,7 @@ var BarsListView = Backbone.View.extend({
         barData.forEach(function(bar, index, bars){
             bars[index].timeSinceString = Moment(bar.updated).fromNow();
         });
+        console.dir(barData);
         this.$el.html(barsListTemplate({barData: barData}));
 
         //Show the rating for the beer
