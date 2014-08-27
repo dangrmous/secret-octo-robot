@@ -22,6 +22,16 @@ var DrinkingInputView = Backbone.View.extend({
     collection: new Beers(),
     initialize: function () {
         this.listenTo(this.collection, 'all', this.render);
+        $.getScript('http://connect.facebook.net/en_US/sdk.js', function () {
+
+            FB.init({
+                appId: '797631293615162',
+                version: 'v2.1'
+            });
+
+
+
+        });
     },
     render: function () {
 
@@ -88,9 +98,10 @@ var DrinkingInputView = Backbone.View.extend({
             var fbPost = {};
             fbPost.message = 'I\'m drinking ' + $beerName.val() + " at " + $barName.val();
             console.log("FB checked");
-            FB.login(function () {
-                //fbPost = {"message":"BLAH"};
-                FB.api('/v2.1/me/feed', 'post', {message: "Hello world"}, function (response) {
+            FB.login(function(){
+                console.log("FB Login called");
+                FB.api('/v2.1/me/feed', 'post', {"message": "Hello world"}, function (response) {
+                    //https://developers.facebook.com/docs/graph-api/reference/v2.1/page/feed#publish
                     if (!response || response.error) {
                         console.dir(fbPost);
                         console.log(response.error);
@@ -101,9 +112,9 @@ var DrinkingInputView = Backbone.View.extend({
                     }
 
                 }, {scope: 'publish_actions'})
+            });
+            //https://developers.facebook.com/docs/reference/javascript/FB.login/v2.1
 
-
-            })
         }
 
         if (newBeer) {
@@ -137,18 +148,6 @@ var DrinkingInputView = Backbone.View.extend({
         beerList.show();
         newBeerInput.hide();
         goBackBtn.hide();
-    },
-    initialize: function () {
-        $.getScript('http://connect.facebook.net/en_US/sdk.js', function () {
-
-            FB.init({
-                appId: '797631293615162',
-
-                version: 'v2.1'
-            })
-
-        });
-
     }
 });
 
