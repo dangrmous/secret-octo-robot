@@ -34,6 +34,13 @@ html, body {
 	padding: 1%; 
 }
 
+#drinkingButtons {
+	float: left;
+}
+
+#homeButton {
+	float: right;
+}
 #bar-input, #beer-input, #beer-select, #add-new-beer {
 	width: 50%;
 	margin: auto;
@@ -179,15 +186,20 @@ html, body {
 	}
 
 	#nav {
-		position: relative;
 		width: 100%;
 		padding-bottom: 3%;
 	}
 
 	#nav button {
-		width: 40%;
-		height: 50px;
 		font-size: 1.3em;
+	}
+
+	/*#drinkingButtons {
+		float: left;
+	}*/
+
+	#homeButton {
+		margin-right: -5%;
 	}
 
 	#pub-input, #bar-input, #beer-input, #beer-select {
@@ -208,7 +220,6 @@ html, body {
 	}
 	#add-pub {
 		width: 30%;
-		height: 50px;
 		font-size: larger;
 	}
 	.form-group input {
@@ -226,7 +237,6 @@ html, body {
 		display: block;
 	}
 	#menu button {
-		width: 30%;
 		font-size: 1.2em;
 	}
     .star-rating{
