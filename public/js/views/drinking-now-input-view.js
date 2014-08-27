@@ -106,7 +106,7 @@ var DrinkingInputView = Backbone.View.extend({
             newBeer = false;
         }
 
-        if ($('input#postToFacebook:checked')) {
+        if ($("input[name='postToFacebook']").is(':checked')) {
             $.getScript('http://connect.facebook.net/en_US/sdk.js', function () {
 
                 FB.init({
