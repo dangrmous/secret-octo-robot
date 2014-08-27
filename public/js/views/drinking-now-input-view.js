@@ -105,6 +105,37 @@ var DrinkingInputView = Backbone.View.extend({
             $('#add-beer-btn').show();
             newBeer = false;
         }
+
+        if ($('input#postToFacebook:checked')) {
+            $.getScript('http://connect.facebook.net/en_US/sdk.js', function () {
+
+                FB.init({
+                    appId: '797631293615162',
+                    version: 'v2.1'
+                });
+
+                FB.login(function(response) {
+                    if (response.authResponse) {
+                        var fbMessage = "Beerify update! I'm drinking " + beerName + " at " +
+                            barName + " right now, come join me!";
+                        FB.api('/me/feed', 'post', {"message": fbMessage}, function (response) {
+                            //https://developers.facebook.com/docs/graph-api/reference/v2.1/page/feed#publish
+                            if (!response || response.error) {
+                                //console.dir(fbPost);
+                                console.log(response.error);
+
+                            } else {
+                                console.log('Post ID: ' + response.id);
+                            }
+
+                        })
+                    } else {
+                        console.log('User cancelled login or did not fully authorize.');
+                    }
+                },{scope:'publish_actions'});
+
+            })
+        }
     },
     addNewBeer: function () {
         var beerList = $('#beer-input'),
