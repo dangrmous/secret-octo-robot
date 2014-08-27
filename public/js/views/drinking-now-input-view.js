@@ -78,21 +78,17 @@ var DrinkingInputView = Backbone.View.extend({
             return(item.get('beer').name == beerName);
         });
 
-        if(beerSearch){
+        if (beerSearch) {
             collectionFromInput = beerSearch;
             var tempBeer = collectionFromInput.get('beer');
-            tempBeer.bars.push({barName:barName, updated:Date.now()});
-            if(beerRating){
+            tempBeer.bars.push({barName: barName, updated: Date.now()});
+            if (beerRating) {
                 tempBeer.numEntries++;
                 tempBeer.avgRating = parseInt(tempBeer.avgRating);
                 beerRating = parseInt(beerRating);
-                console.log("tempBeer.avgRating: " + tempBeer.avgRating + typeof tempBeer.avgRating);
-                console.log("tempBeer.numEntries: " + tempBeer.numEntries + typeof tempBeer.numEntries);
-                console.log("beerRating: " + beerRating + typeof beerRating);
                 tempBeer.avgRating = ((tempBeer.avgRating + beerRating) / tempBeer.numEntries);
-                console.log("Now tempBeer.avgRating is: " + tempBeer.avgRating + typeof tempBeer.avgRating);
             }
-            collectionFromInput.set({beer:tempBeer});
+            collectionFromInput.set({beer: tempBeer});
         }
 
         this.collection.create(collectionFromInput, {validate: true});
