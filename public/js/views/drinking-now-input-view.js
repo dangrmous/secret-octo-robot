@@ -102,6 +102,7 @@ var DrinkingInputView = Backbone.View.extend({
         if (newBeer) {
             $('#add-new-beer').hide();
             $('#beer-input').show();
+            $('#add-beer-btn').show();
             newBeer = false;
         }
     },
