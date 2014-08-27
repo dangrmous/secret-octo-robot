@@ -1,18 +1,15 @@
 var $ = require('jquery'),
-    Backbone = require('backbone');
+    Backbone = require('backbone'),
+    Beers = require('../collections/beers'),
+    data = [];
 
 Backbone.$ = $;
-
-var Beers = require('../collections/beers');
-var data = [];
 
 // Bring in template for main view
 var findBeerTemplate = require('../../templates/find-beer.hbs');
 
 //Bring in list view
-
 var BarsListView = require('./find-beer-list-view');
-
 
 var FindBeerView = Backbone.View.extend({
     el: '#my-app',
@@ -25,35 +22,25 @@ var FindBeerView = Backbone.View.extend({
             success: function (model, response, options) {
                 console.log("collection fetch success!");
                 model.forEach(
-
                     function(item){
                         data.push({name:item.attributes.beer.name});
 
                     });
-
             },
             error: function () {
                 console.log("collection fetch error!");
             }
         });
-        console.log('Yay find beer view!');
 
     },
     render: function () {
-
         $(this.el).html(findBeerTemplate({beers: data}));
-        console.log('Yay find beer view render');
-
-
     },
     events: {"click #get-bars": function () {
-        console.log("#get-bars clicked!");
-        var selectedBeer = $('#beer-select').val();
+        var selectedBeer = $('#beer-select').val(),
+            barsListView = new BarsListView({collection:this.collection});
 
-        var barsListView = new BarsListView({collection:this.collection});
         barsListView.render(selectedBeer);
-
-
         $('#pub-list-row').html(barsListView.$el);
     }
     }

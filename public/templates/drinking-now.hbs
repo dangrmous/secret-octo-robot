@@ -1,22 +1,51 @@
+
 <script src="http://connect.facebook.net/en_US/sdk.js"></script>
-<div id="nav">
-    <a href="#/drinkingnow">
-        <button type="button" class="btn btn-default">Drinking Now</button>
-    </a>
-    <a href="#/findbeer">
-        <button type="button" class="btn btn-default">Find Beer</button>
-    </a>
+<div class="row" id="nav">
+    <div style="float: left;">
+        <a href="#/drinkingnow">
+            <button type="button" class="btn btn-default">Drinking Now</button>
+        </a>
+        <a href="#/findbeer">
+            <button type="button" class="btn btn-default">Find Beer</button>
+        </a>
+    </div>
+    <div style="float:right;">
+        <a href="#/">
+            <button type="button" class="btn btn-default">Home</button>
+        </a>
+    </div>
+
 </div>
-<div class="row" style="padding-top: 7%;">
+
+<div class="row">
     <h1>Drinking Now</h1>
     <br>
 
     <div class="form-group">
         <h4>Where are you?</h4>
-        <input id="bar-input" class="form-control" type="text">
+        <input id="bar-input" class="form-control" type="text" placeholder="Enter bar">
         <br>
-        <h4>What are you drinking?</h4>
-        <input id="beer-input" class="form-control" type="text">
+
+        <div id="beer-data">
+            <h4>What are you drinking?</h4>
+            <select id="beer-input" class="form-control" placeholder="Select beer">
+                {{#each beerData}}
+                    <option>{{name}}</option>
+                {{/each}}
+            </select>
+            <button id="add-beer-btn" class="btn btn-default">
+                Can't find your beer?
+            </button>
+
+
+                <input type="text" class="form-control" id="add-new-beer" placeholder="Enter beer"/>
+                <button id="go-back" class="btn btn-default">
+                    Go back
+                </button>
+
+
+        </div>
+
         <br>
 
         <label for="postToFacebook"><h4>Post to Facebook</h4></label>
