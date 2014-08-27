@@ -34,7 +34,7 @@ img {
 	z-index: 1;
 }
 
-#bar-input, #beer-input, #beer-select {
+#bar-input, #beer-input, #beer-select, #add-new-beer {
 	width: 50%;
 	margin: auto;
 	min-width: 200px;
