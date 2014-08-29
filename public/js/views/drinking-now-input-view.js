@@ -8,19 +8,30 @@ Backbone.$ = $;
 
 var DrinkingInputView = Backbone.View.extend({
 
+
     el: '.form-group',
     events: {
         'click #add-beer': 'addBeer',
         'click #add-beer-btn': 'addNewBeer',
         'click #go-back': 'goBackToList',
-        'change :radio':
-            function(){
-                $('.choice').text( $('input:checked').val() + ' stars' );
-            }
+        'change :radio': function () {
+            $('.choice').text($('input:checked').val() + ' stars');
+
+        }
     },
     collection: new Beers(),
     initialize: function () {
-        this.listenTo(this.collection,'all', this.render);
+        this.listenTo(this.collection, 'all', this.render);
+        $.getScript('http://connect.facebook.net/en_US/sdk.js', function () {
+
+            FB.init({
+                appId: '797631293615162',
+                version: 'v2.1'
+            });
+
+
+
+        });
     },
     render: function () {
 
@@ -30,6 +41,7 @@ var DrinkingInputView = Backbone.View.extend({
 
         newBeerInput.hide();
         goBackBtn.hide();
+
 
         // Add beer and bar to list
         this.collection.models.forEach(function (item) {
@@ -60,6 +72,7 @@ var DrinkingInputView = Backbone.View.extend({
             barName = $barName.val(),
             beerRating = $beerRating.val(),
             collectionFromInput = {
+
                 beer: {
                     name: beerName,
                     creationDate: Date.now(),
@@ -72,7 +85,7 @@ var DrinkingInputView = Backbone.View.extend({
                     avgRating: (beerRating || 0),
                     numEntries: (beerRating ? 1 : 0)
                 }
-        };
+            };
 
         var beerSearch = this.collection.find(function(item){
             return(item.get('beer').name == beerName);
@@ -94,10 +107,32 @@ var DrinkingInputView = Backbone.View.extend({
         this.collection.create(collectionFromInput, {validate: true});
         $beerName.val('');
         $barName.val('');
-        $beerRating.each(function(){
+        $beerRating.each(function () {
             $(this).removeAttr('checked');
         });
         $('h4.choice').text('Rate this beer');
+        if ($('input#postToFacebook:checked')) {
+            var fbPost = {};
+            fbPost.message = 'I\'m drinking ' + $beerName.val() + " at " + $barName.val();
+            console.log("FB checked");
+            FB.login(function(){
+                console.log("FB Login called");
+                FB.api('/v2.1/me/feed', 'post', {"message": "Hello world"}, function (response) {
+                    //https://developers.facebook.com/docs/graph-api/reference/v2.1/page/feed#publish
+                    if (!response || response.error) {
+                        console.dir(fbPost);
+                        console.log(response.error);
+
+                    } else {
+                        console.log('Post ID: ' + response.id);
+
+                    }
+
+                }, {scope: 'publish_actions'})
+            });
+            //https://developers.facebook.com/docs/reference/javascript/FB.login/v2.1
+
+        }
 
         if (newBeer) {
             $('#add-new-beer').hide();
@@ -164,5 +199,6 @@ var DrinkingInputView = Backbone.View.extend({
         goBackBtn.hide();
     }
 });
+
 
 module.exports = DrinkingInputView;
